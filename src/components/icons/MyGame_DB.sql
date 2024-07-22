@@ -1,0 +1,9 @@
+CREATE DATABASE MyGame;
+
+USE MyGame;
+
+CREATE TABLE User (
+  id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  level INT(6) NOT NULL,
+  experience INT(6) NOT NULL
+);
