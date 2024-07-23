@@ -19,5 +19,5 @@ const { level, experience } = defineProps({
 </template>
 
 <style>
-/* your styles here */
+
 </style>

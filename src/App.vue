@@ -1,17 +1,6 @@
 <template>
-  <header>
-    <img alt="MindBlown logo" class="logo" src="./assets/focus.png" width="2912" height="1632" />
-    <button class="custom-button" @click="incrementExperience">Gain Experience</button>
-    <p class="gold-text">{{ levelUpMessage }}</p>
-    <progress class="experience-bar" :value="experience" :max="level * 10"></progress>
 
-  </header>
-  <section class="logs">
-    <h1>HACKING HISTORY</h1>
-    <div class="log-messages" v-for="(log, index) in levelUpLogs" :key="index">
-      <p>{{ log }}</p>
-    </div>
-  </section>
+
   <main>
     <TheWelcome :level="level" :experience="experience" />
   </main>
@@ -48,7 +37,6 @@ export default {
         case 1: return 'You have begun your journey!';
         case 2: return 'You are learning fast!';
         case 3: return 'Keep going, you are doing great!';
-          // ... add more cases as desired
         default: return `You're now at level ${level}`;
       }
     },
@@ -69,65 +57,66 @@ export default {
 </script>
 
 <style>
-
-.gold-text {
-  color: gold;
-  margin-top: 40px; /* adjust this value as needed */
-  font-size: 32px; /* adjust as needed */
-  text-shadow: 3px 3px 2px black; /* adjust these values as needed */
-  text-align: center;
-}
-
-.logo {
-  width: 560px; /* Full width */
-  height: 300px;
-}
-
-.experience-bar {
-  width: 100%; /* Full width */
-  height: 100px; /* Specified height */
-  margin-top: 40px;
-
-}
-
-.custom-button {
-  font-size: 48px; /* adjust as needed */
-  padding: 24px 24px; /* adjust as needed */
-  margin-top: 40px; /* adjust this value as needed */
+header {
+  position: relative;
   display: flex;
-  background-color: #42b983; /* adjust as needed */
-  color: black; /* adjust as needed */
-  border: inset 10px red; /* adjust as needed */
-  border-radius: 64px; /* adjust as needed */
+  font-family: Arial,serif;
+  background-color: #0c3753;
 }
 
 body {
+  position: relative;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  padding: 1rem;
-  box-sizing: border-box;
-  text-align: center;
+  font-family: Arial,serif;
+  background-color: #0c3753;
+}
+
+footer {
+  position: relative;
+  display: flex;
+  font-family: Arial,serif;
+  background-color: #0c3753;
 }
 
 .logs {
-  width: 25%; /* Adjust this as required */
+  width: 25%;
   max-height: 100%;
-  overflow-y: auto; /* Enable scrolling on overflow */
+  overflow-y: auto;
   padding: 1rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   margin-left: 60px;
 }
 
-.logs h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.gold-text {
+  color: gold;
+  margin-top: 40px;
+  font-size: 32px;
+  text-shadow: 3px 3px 2px black;
+  text-align: center;
 }
 
-.logs p {
-  margin-bottom: 0.5rem;
+.logo {
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  width: 560px;
+  height: 300px;
 }
 
+.experience-bar {
+  width: 100%;
+  height: 100px;
+  margin-top: 40px;
+}
+
+.custom-button {
+  font-size: 48px;
+  padding: 24px 24px;
+  margin-top: 40px;
+  display: flex;
+  background-color: #42b983;
+  color: black;
+  border: inset 10px red;
+  border-radius: 64px;
+}
 </style>

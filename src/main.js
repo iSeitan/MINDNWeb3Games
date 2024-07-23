@@ -4,11 +4,12 @@ import App from './App.vue'
 
 createApp(App).mount('#app')
 
-// main.js
+// Initializing the variables
 const clickButton = document.getElementById('clickButton');
 let experience = 0;
 let level = 1;
 
+// Every button click increases the player's experience by 1
 clickButton.addEventListener('click', () => {
     experience += 1;
     updateExperience();
@@ -19,7 +20,7 @@ function updateExperience() {
     if (experience >= level * 10) {
         level++;
         // Update the player's level and experience
-        console.log(`You leveled up to level ${level}!`);
+        console.log(`You leveled up, now ${level} in Hacking!`);
         experience = 0;
     }
 }
